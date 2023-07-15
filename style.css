@@ -1,6 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
+
 :root {
   font-size: min(5vw, 20px);
+  --font: "Sniglet", cursive;
+  --ease: all 0.2s ease-in-out;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #ccc;
+    --primary: #26252b;
+    --accent: #8583e6;
+  }
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --text: #121212;
+    --primary: #f0f0f7;
+    --accent: #7171d7;
+  }
+
 }
 
 * {
@@ -17,6 +41,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: var(--bg);
+  color: var(--text);
   gap: 2rem;
   padding-top: 2rem;
   position: relative;
@@ -29,20 +55,24 @@ body {
   gap: 0.5rem;
   margin-top: 2rem;
 }
+
 .grid button {
   font-size: 2rem;
   font-weight: bold;
   border-radius: 0.5rem;
-  background-color: rgb(240, 240, 247);
-  color: rgb(113, 113, 215);
-  transition: all 0.2s ease-in-out;
+  background-color: var(--primary);
+  color: var(--accent);
+  transition: var(--ease);
 }
 
 button#restart {
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   font-size: 1rem;
-  transition: all 0.2s ease-in-out;
+  transition: var(--ease);
+  background-color: var(--primary);
+  color: var(--text);
+
 }
 
 .result {
@@ -61,27 +91,35 @@ button#restart {
   position: fixed;
   top: 0;
   -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   z-index: 1;
 }
 
 @keyframes animateResult {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0;
   }
-  10%, 90% {
+
+  10%,
+  90% {
     opacity: 1;
   }
 }
+
 @media (hover: hover) {
   .grid button:hover {
     cursor: pointer;
     background-color: rgba(113, 113, 215, 0.8);
-    color: rgb(240, 240, 247);
+    color: var(--primary);
   }
+
   button#restart:hover {
     cursor: pointer;
     background-color: rgba(113, 113, 215, 0.8);
-    color: rgb(240, 240, 247);
+    color: var(--primary);
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
