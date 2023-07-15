@@ -49,8 +49,12 @@ const checkForWin = (move, index) => {
         flag = true;
     }
   });
-  if (flag) announceResult(move);
-  else if (board.indexOf(0) == -1) announceResult();
+  if (flag) {
+    announceResult(move);
+    boxes.forEach((box) => {
+      box.disabled = true;
+    });
+  } else if (board.indexOf(0) == -1) announceResult();
 };
 
 //restart the match
