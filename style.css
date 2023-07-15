@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
+:root {
+  font-size: min(5vw, 20px);
+}
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Sniglet", cursive;
+}
+
+body {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, min(100px, 25vw));
+  grid-template-rows: repeat(3, min(100px, 25vw));
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.grid button {
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  background-color: rgb(240, 240, 247);
+  color: rgb(113, 113, 215);
+  transition: all 0.2s ease-in-out;
+}
+.grid button:hover {
+  cursor: pointer;
+  background-color: rgba(113, 113, 215, 0.8);
+  color: rgb(240, 240, 247);
+}
+
+button#restart {
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+button#restart:hover {
+  cursor: pointer;
+  background-color: rgba(113, 113, 215, 0.8);
+  color: rgb(240, 240, 247);
+}
+
+.result {
+  border-radius: 0.5rem;
+  z-index: 2;
+  display: grid;
+  font-size: 1.2rem;
+  place-content: center;
+}
+
+.backdrop {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 31, 74, 0.2);
+  position: fixed;
+  top: 0;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+@keyframes animateResult {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
