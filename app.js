@@ -1,4 +1,5 @@
 let board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+let highlightIndices = [];
 
 const possibleWins = [
   [0, 1, 2],
@@ -45,11 +46,13 @@ const checkForWin = (move, index) => {
         board[possibility[0]] === move &&
         board[possibility[1]] === move &&
         board[possibility[2]] === move
-      )
+      ) {
         flag = true;
+      }
     }
   });
   if (flag) {
+    highlightBoxes(highlightIndices);
     announceResult(move);
     boxes.forEach((box) => {
       box.disabled = true;
@@ -70,6 +73,11 @@ const announceResult = (player) => {
   else result.innerHTML = "Game draw.";
 };
 
+//highlight the boxes
+const highlightBoxes = (arr) => {
+  arr.forEach((id) => [boxes[id].classList.toggle("highlight")]);
+};
+
 //initialize
 const initiate = () => {
   boxes.forEach((box) => {
@@ -78,6 +86,7 @@ const initiate = () => {
   });
   board.fill(0);
   result.innerHTML = "&nbsp;";
+  highlightBoxes(highlightIndices);
 };
 
 initiate();
