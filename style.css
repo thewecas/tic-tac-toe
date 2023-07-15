@@ -32,7 +32,7 @@
   margin: 0;
   box-sizing: border-box;
   text-align: center;
-  font-family: "Sniglet", cursive;
+  font-family: var(--font);
 }
 
 body {
@@ -95,19 +95,6 @@ button#restart {
   z-index: 1;
 }
 
-@keyframes animateResult {
-
-  0%,
-  100% {
-    opacity: 0;
-  }
-
-  10%,
-  90% {
-    opacity: 1;
-  }
-}
-
 @media (hover: hover) {
   .grid button:hover {
     cursor: pointer;
@@ -121,5 +108,3 @@ button#restart {
     color: var(--primary);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
