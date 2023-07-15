@@ -40,11 +40,6 @@ body {
     background-color: $primary;
     color: $accent;
     transition: $ease;
-    &:hover {
-      cursor: pointer;
-      background-color: rgba($accent, 0.8);
-      color: $primary;
-    }
   }
 }
 
@@ -53,11 +48,6 @@ button#restart {
   border-radius: 0.25rem;
   font-size: 1rem;
   transition: $ease;
-  &:hover {
-    cursor: pointer;
-    background-color: rgba($accent, 0.8);
-    color: $primary;
-  }
 }
 
 .result {
@@ -87,5 +77,24 @@ button#restart {
   10%,
   90% {
     opacity: 1;
+  }
+}
+
+@media (hover: hover) {
+  .grid {
+    button {
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($accent, 0.8);
+        color: $primary;
+      }
+    }
+  }
+  button#restart {
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($accent, 0.8);
+      color: $primary;
+    }
   }
 }

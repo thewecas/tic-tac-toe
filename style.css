@@ -37,22 +37,12 @@ body {
   color: rgb(113, 113, 215);
   transition: all 0.2s ease-in-out;
 }
-.grid button:hover {
-  cursor: pointer;
-  background-color: rgba(113, 113, 215, 0.8);
-  color: rgb(240, 240, 247);
-}
 
 button#restart {
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
-}
-button#restart:hover {
-  cursor: pointer;
-  background-color: rgba(113, 113, 215, 0.8);
-  color: rgb(240, 240, 247);
 }
 
 .result {
@@ -81,5 +71,17 @@ button#restart:hover {
   }
   10%, 90% {
     opacity: 1;
+  }
+}
+@media (hover: hover) {
+  .grid button:hover {
+    cursor: pointer;
+    background-color: rgba(113, 113, 215, 0.8);
+    color: rgb(240, 240, 247);
+  }
+  button#restart:hover {
+    cursor: pointer;
+    background-color: rgba(113, 113, 215, 0.8);
+    color: rgb(240, 240, 247);
   }
 }/*# sourceMappingURL=style.css.map */
